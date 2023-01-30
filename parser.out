@@ -1,0 +1,2271 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> surah
+Rule 1     surah -> verse_n
+Rule 2     surah -> surah verse_n
+Rule 3     verse_n -> verse DIVIDER
+Rule 4     verse -> vs
+Rule 5     verse -> ns
+Rule 6     verse -> CONJ ns pp object
+Rule 7     verse -> CONJ UNDEF_N CONJ vs
+Rule 8     verse -> VERB object
+Rule 9     verse -> CONJ UNDEF_N CONJ UNDEF_N
+Rule 10    verse -> CONJ ns
+Rule 11    ns -> PRON UNDEF_N
+Rule 12    ns -> UNDEF_N UNDEF_N
+Rule 13    ns -> CONJ UNDEF_N pp UNDEF_N UNDEF_N
+Rule 14    ns -> UNDEF_N UNDEF_N UNDEF_N
+Rule 15    ns -> CONJ UNDEF_N UNDEF_N UNDEF_N
+Rule 16    ns -> VERB pp VERB subject CONJ vs CONJ vs
+Rule 17    ns -> DEM UNDEF_N DEF_N
+Rule 18    ns -> REL vs ns
+Rule 19    ns -> PRON_PLURAL UNDEF_N DEF_N
+Rule 20    ns -> pp UNDEF_N adj
+Rule 21    vs -> NEG VERB pp object
+Rule 22    vs -> REL VERB
+Rule 23    vs -> EMPH CERT VERB subject object pp
+Rule 24    vs -> INTG VERB object
+Rule 25    vs -> NEG VERB pp subject
+Rule 26    vs -> VERB subject object adj
+Rule 27    vs -> NEG VERB object subject
+Rule 28    vs -> INTG NEG VERB pp object
+Rule 29    vs -> CONJ VERB subject object object
+Rule 30    vs -> REM NEG VERB object
+Rule 31    vs -> CONJ REL VERB PRON REL DEF_N
+Rule 32    vs -> VERB subject pp
+Rule 33    pp -> PREP DEM
+Rule 34    pp -> PREP UNDEF_N
+Rule 35    pp -> PREP PRON
+Rule 36    pp -> PREP DEF_N
+Rule 37    pp -> PREP REL
+Rule 38    pp -> PREP UNDEF_N PRON
+Rule 39    sc -> SUB vs
+Rule 40    object -> DEF_N
+Rule 41    object -> UNDEF_N
+Rule 42    object -> sc
+Rule 43    object -> vs
+Rule 44    object -> PRON
+Rule 45    subject -> PRON
+Rule 46    subject -> UNDEF_N
+Rule 47    adj -> UNDEF_N
+
+Terminals, with rules where they appear
+
+CERT                 : 23
+CONJ                 : 6 7 7 9 9 10 13 15 16 16 29 31
+DEF_N                : 17 19 31 36 40
+DEM                  : 17 33
+DIVIDER              : 3
+EMPH                 : 23
+INTG                 : 24 28
+NEG                  : 21 25 27 28 30
+PREP                 : 33 34 35 36 37 38
+PRON                 : 11 31 35 38 44 45
+PRON_PLURAL          : 19
+REL                  : 18 22 31 31 37
+REM                  : 30
+SUB                  : 39
+UNDEF_N              : 7 9 9 11 12 12 13 13 13 14 14 14 15 15 15 17 19 20 34 38 41 46 47
+VERB                 : 8 16 16 21 22 23 24 25 26 27 28 29 30 31 32
+error                : 
+
+Nonterminals, with rules where they appear
+
+adj                  : 20 26
+ns                   : 5 6 10 18
+object               : 6 8 21 23 24 26 27 28 29 29 30
+pp                   : 6 13 16 20 21 23 25 28 32
+sc                   : 42
+subject              : 16 23 25 26 27 29 32
+surah                : 2 0
+verse                : 3
+verse_n              : 1 2
+vs                   : 4 7 16 16 18 39 43
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . surah
+    (1) surah -> . verse_n
+    (2) surah -> . surah verse_n
+    (3) verse_n -> . verse DIVIDER
+    (4) verse -> . vs
+    (5) verse -> . ns
+    (6) verse -> . CONJ ns pp object
+    (7) verse -> . CONJ UNDEF_N CONJ vs
+    (8) verse -> . VERB object
+    (9) verse -> . CONJ UNDEF_N CONJ UNDEF_N
+    (10) verse -> . CONJ ns
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+    (11) ns -> . PRON UNDEF_N
+    (12) ns -> . UNDEF_N UNDEF_N
+    (13) ns -> . CONJ UNDEF_N pp UNDEF_N UNDEF_N
+    (14) ns -> . UNDEF_N UNDEF_N UNDEF_N
+    (15) ns -> . CONJ UNDEF_N UNDEF_N UNDEF_N
+    (16) ns -> . VERB pp VERB subject CONJ vs CONJ vs
+    (17) ns -> . DEM UNDEF_N DEF_N
+    (18) ns -> . REL vs ns
+    (19) ns -> . PRON_PLURAL UNDEF_N DEF_N
+    (20) ns -> . pp UNDEF_N adj
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    CONJ            shift and go to state 6
+    VERB            shift and go to state 9
+    NEG             shift and go to state 10
+    REL             shift and go to state 11
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    REM             shift and go to state 14
+    PRON            shift and go to state 15
+    UNDEF_N         shift and go to state 8
+    DEM             shift and go to state 16
+    PRON_PLURAL     shift and go to state 17
+    PREP            shift and go to state 18
+
+    surah                          shift and go to state 1
+    verse_n                        shift and go to state 2
+    verse                          shift and go to state 3
+    vs                             shift and go to state 4
+    ns                             shift and go to state 5
+    pp                             shift and go to state 7
+
+state 1
+
+    (0) S' -> surah .
+    (2) surah -> surah . verse_n
+    (3) verse_n -> . verse DIVIDER
+    (4) verse -> . vs
+    (5) verse -> . ns
+    (6) verse -> . CONJ ns pp object
+    (7) verse -> . CONJ UNDEF_N CONJ vs
+    (8) verse -> . VERB object
+    (9) verse -> . CONJ UNDEF_N CONJ UNDEF_N
+    (10) verse -> . CONJ ns
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+    (11) ns -> . PRON UNDEF_N
+    (12) ns -> . UNDEF_N UNDEF_N
+    (13) ns -> . CONJ UNDEF_N pp UNDEF_N UNDEF_N
+    (14) ns -> . UNDEF_N UNDEF_N UNDEF_N
+    (15) ns -> . CONJ UNDEF_N UNDEF_N UNDEF_N
+    (16) ns -> . VERB pp VERB subject CONJ vs CONJ vs
+    (17) ns -> . DEM UNDEF_N DEF_N
+    (18) ns -> . REL vs ns
+    (19) ns -> . PRON_PLURAL UNDEF_N DEF_N
+    (20) ns -> . pp UNDEF_N adj
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    CONJ            shift and go to state 6
+    VERB            shift and go to state 9
+    NEG             shift and go to state 10
+    REL             shift and go to state 11
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    REM             shift and go to state 14
+    PRON            shift and go to state 15
+    UNDEF_N         shift and go to state 8
+    DEM             shift and go to state 16
+    PRON_PLURAL     shift and go to state 17
+    PREP            shift and go to state 18
+
+    verse_n                        shift and go to state 19
+    verse                          shift and go to state 3
+    vs                             shift and go to state 4
+    ns                             shift and go to state 5
+    pp                             shift and go to state 7
+
+state 2
+
+    (1) surah -> verse_n .
+
+    CONJ            reduce using rule 1 (surah -> verse_n .)
+    VERB            reduce using rule 1 (surah -> verse_n .)
+    NEG             reduce using rule 1 (surah -> verse_n .)
+    REL             reduce using rule 1 (surah -> verse_n .)
+    EMPH            reduce using rule 1 (surah -> verse_n .)
+    INTG            reduce using rule 1 (surah -> verse_n .)
+    REM             reduce using rule 1 (surah -> verse_n .)
+    PRON            reduce using rule 1 (surah -> verse_n .)
+    UNDEF_N         reduce using rule 1 (surah -> verse_n .)
+    DEM             reduce using rule 1 (surah -> verse_n .)
+    PRON_PLURAL     reduce using rule 1 (surah -> verse_n .)
+    PREP            reduce using rule 1 (surah -> verse_n .)
+    $end            reduce using rule 1 (surah -> verse_n .)
+
+
+state 3
+
+    (3) verse_n -> verse . DIVIDER
+
+    DIVIDER         shift and go to state 20
+
+
+state 4
+
+    (4) verse -> vs .
+
+    DIVIDER         reduce using rule 4 (verse -> vs .)
+
+
+state 5
+
+    (5) verse -> ns .
+
+    DIVIDER         reduce using rule 5 (verse -> ns .)
+
+
+state 6
+
+    (6) verse -> CONJ . ns pp object
+    (7) verse -> CONJ . UNDEF_N CONJ vs
+    (9) verse -> CONJ . UNDEF_N CONJ UNDEF_N
+    (10) verse -> CONJ . ns
+    (29) vs -> CONJ . VERB subject object object
+    (31) vs -> CONJ . REL VERB PRON REL DEF_N
+    (13) ns -> CONJ . UNDEF_N pp UNDEF_N UNDEF_N
+    (15) ns -> CONJ . UNDEF_N UNDEF_N UNDEF_N
+    (11) ns -> . PRON UNDEF_N
+    (12) ns -> . UNDEF_N UNDEF_N
+    (13) ns -> . CONJ UNDEF_N pp UNDEF_N UNDEF_N
+    (14) ns -> . UNDEF_N UNDEF_N UNDEF_N
+    (15) ns -> . CONJ UNDEF_N UNDEF_N UNDEF_N
+    (16) ns -> . VERB pp VERB subject CONJ vs CONJ vs
+    (17) ns -> . DEM UNDEF_N DEF_N
+    (18) ns -> . REL vs ns
+    (19) ns -> . PRON_PLURAL UNDEF_N DEF_N
+    (20) ns -> . pp UNDEF_N adj
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    UNDEF_N         shift and go to state 23
+    VERB            shift and go to state 24
+    REL             shift and go to state 25
+    PRON            shift and go to state 15
+    CONJ            shift and go to state 21
+    DEM             shift and go to state 16
+    PRON_PLURAL     shift and go to state 17
+    PREP            shift and go to state 18
+
+    ns                             shift and go to state 22
+    pp                             shift and go to state 7
+
+state 7
+
+    (20) ns -> pp . UNDEF_N adj
+
+    UNDEF_N         shift and go to state 26
+
+
+state 8
+
+    (12) ns -> UNDEF_N . UNDEF_N
+    (14) ns -> UNDEF_N . UNDEF_N UNDEF_N
+
+    UNDEF_N         shift and go to state 27
+
+
+state 9
+
+    (8) verse -> VERB . object
+    (26) vs -> VERB . subject object adj
+    (32) vs -> VERB . subject pp
+    (16) ns -> VERB . pp VERB subject CONJ vs CONJ vs
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 35
+    PRON            shift and go to state 37
+    PREP            shift and go to state 18
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 29
+    subject                        shift and go to state 30
+    pp                             shift and go to state 31
+    vs                             shift and go to state 33
+    sc                             shift and go to state 36
+
+state 10
+
+    (21) vs -> NEG . VERB pp object
+    (25) vs -> NEG . VERB pp subject
+    (27) vs -> NEG . VERB object subject
+
+    VERB            shift and go to state 40
+
+
+state 11
+
+    (22) vs -> REL . VERB
+    (18) ns -> REL . vs ns
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    VERB            shift and go to state 41
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 42
+
+state 12
+
+    (23) vs -> EMPH . CERT VERB subject object pp
+
+    CERT            shift and go to state 43
+
+
+state 13
+
+    (24) vs -> INTG . VERB object
+    (28) vs -> INTG . NEG VERB pp object
+
+    VERB            shift and go to state 44
+    NEG             shift and go to state 45
+
+
+state 14
+
+    (30) vs -> REM . NEG VERB object
+
+    NEG             shift and go to state 46
+
+
+state 15
+
+    (11) ns -> PRON . UNDEF_N
+
+    UNDEF_N         shift and go to state 47
+
+
+state 16
+
+    (17) ns -> DEM . UNDEF_N DEF_N
+
+    UNDEF_N         shift and go to state 48
+
+
+state 17
+
+    (19) ns -> PRON_PLURAL . UNDEF_N DEF_N
+
+    UNDEF_N         shift and go to state 49
+
+
+state 18
+
+    (33) pp -> PREP . DEM
+    (34) pp -> PREP . UNDEF_N
+    (35) pp -> PREP . PRON
+    (36) pp -> PREP . DEF_N
+    (37) pp -> PREP . REL
+    (38) pp -> PREP . UNDEF_N PRON
+
+    DEM             shift and go to state 50
+    UNDEF_N         shift and go to state 51
+    PRON            shift and go to state 52
+    DEF_N           shift and go to state 53
+    REL             shift and go to state 54
+
+
+state 19
+
+    (2) surah -> surah verse_n .
+
+    CONJ            reduce using rule 2 (surah -> surah verse_n .)
+    VERB            reduce using rule 2 (surah -> surah verse_n .)
+    NEG             reduce using rule 2 (surah -> surah verse_n .)
+    REL             reduce using rule 2 (surah -> surah verse_n .)
+    EMPH            reduce using rule 2 (surah -> surah verse_n .)
+    INTG            reduce using rule 2 (surah -> surah verse_n .)
+    REM             reduce using rule 2 (surah -> surah verse_n .)
+    PRON            reduce using rule 2 (surah -> surah verse_n .)
+    UNDEF_N         reduce using rule 2 (surah -> surah verse_n .)
+    DEM             reduce using rule 2 (surah -> surah verse_n .)
+    PRON_PLURAL     reduce using rule 2 (surah -> surah verse_n .)
+    PREP            reduce using rule 2 (surah -> surah verse_n .)
+    $end            reduce using rule 2 (surah -> surah verse_n .)
+
+
+state 20
+
+    (3) verse_n -> verse DIVIDER .
+
+    CONJ            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    VERB            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    NEG             reduce using rule 3 (verse_n -> verse DIVIDER .)
+    REL             reduce using rule 3 (verse_n -> verse DIVIDER .)
+    EMPH            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    INTG            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    REM             reduce using rule 3 (verse_n -> verse DIVIDER .)
+    PRON            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    UNDEF_N         reduce using rule 3 (verse_n -> verse DIVIDER .)
+    DEM             reduce using rule 3 (verse_n -> verse DIVIDER .)
+    PRON_PLURAL     reduce using rule 3 (verse_n -> verse DIVIDER .)
+    PREP            reduce using rule 3 (verse_n -> verse DIVIDER .)
+    $end            reduce using rule 3 (verse_n -> verse DIVIDER .)
+
+
+state 21
+
+    (13) ns -> CONJ . UNDEF_N pp UNDEF_N UNDEF_N
+    (15) ns -> CONJ . UNDEF_N UNDEF_N UNDEF_N
+
+    UNDEF_N         shift and go to state 55
+
+
+state 22
+
+    (6) verse -> CONJ ns . pp object
+    (10) verse -> CONJ ns .
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    DIVIDER         reduce using rule 10 (verse -> CONJ ns .)
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 56
+
+state 23
+
+    (7) verse -> CONJ UNDEF_N . CONJ vs
+    (9) verse -> CONJ UNDEF_N . CONJ UNDEF_N
+    (13) ns -> CONJ UNDEF_N . pp UNDEF_N UNDEF_N
+    (15) ns -> CONJ UNDEF_N . UNDEF_N UNDEF_N
+    (12) ns -> UNDEF_N . UNDEF_N
+    (14) ns -> UNDEF_N . UNDEF_N UNDEF_N
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    CONJ            shift and go to state 57
+    UNDEF_N         shift and go to state 58
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 59
+
+state 24
+
+    (29) vs -> CONJ VERB . subject object object
+    (16) ns -> VERB . pp VERB subject CONJ vs CONJ vs
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+    PREP            shift and go to state 18
+
+    subject                        shift and go to state 60
+    pp                             shift and go to state 31
+
+state 25
+
+    (31) vs -> CONJ REL . VERB PRON REL DEF_N
+    (18) ns -> REL . vs ns
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    VERB            shift and go to state 63
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 42
+
+state 26
+
+    (20) ns -> pp UNDEF_N . adj
+    (47) adj -> . UNDEF_N
+
+    UNDEF_N         shift and go to state 64
+
+    adj                            shift and go to state 65
+
+state 27
+
+    (12) ns -> UNDEF_N UNDEF_N .
+    (14) ns -> UNDEF_N UNDEF_N . UNDEF_N
+
+    DIVIDER         reduce using rule 12 (ns -> UNDEF_N UNDEF_N .)
+    PREP            reduce using rule 12 (ns -> UNDEF_N UNDEF_N .)
+    UNDEF_N         shift and go to state 66
+
+
+state 28
+
+    (26) vs -> VERB . subject object adj
+    (32) vs -> VERB . subject pp
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 30
+
+state 29
+
+    (8) verse -> VERB object .
+
+    DIVIDER         reduce using rule 8 (verse -> VERB object .)
+
+
+state 30
+
+    (26) vs -> VERB subject . object adj
+    (32) vs -> VERB subject . pp
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    PREP            shift and go to state 18
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 67
+    pp                             shift and go to state 68
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 31
+
+    (16) ns -> VERB pp . VERB subject CONJ vs CONJ vs
+
+    VERB            shift and go to state 71
+
+
+state 32
+
+    (29) vs -> CONJ . VERB subject object object
+    (31) vs -> CONJ . REL VERB PRON REL DEF_N
+
+    VERB            shift and go to state 72
+    REL             shift and go to state 73
+
+
+state 33
+
+    (43) object -> vs .
+
+    DIVIDER         reduce using rule 43 (object -> vs .)
+    UNDEF_N         reduce using rule 43 (object -> vs .)
+    PRON            reduce using rule 43 (object -> vs .)
+    CONJ            reduce using rule 43 (object -> vs .)
+    VERB            reduce using rule 43 (object -> vs .)
+    DEM             reduce using rule 43 (object -> vs .)
+    REL             reduce using rule 43 (object -> vs .)
+    PRON_PLURAL     reduce using rule 43 (object -> vs .)
+    PREP            reduce using rule 43 (object -> vs .)
+    DEF_N           reduce using rule 43 (object -> vs .)
+    SUB             reduce using rule 43 (object -> vs .)
+    NEG             reduce using rule 43 (object -> vs .)
+    EMPH            reduce using rule 43 (object -> vs .)
+    INTG            reduce using rule 43 (object -> vs .)
+    REM             reduce using rule 43 (object -> vs .)
+
+
+state 34
+
+    (40) object -> DEF_N .
+
+    DIVIDER         reduce using rule 40 (object -> DEF_N .)
+    UNDEF_N         reduce using rule 40 (object -> DEF_N .)
+    PRON            reduce using rule 40 (object -> DEF_N .)
+    CONJ            reduce using rule 40 (object -> DEF_N .)
+    VERB            reduce using rule 40 (object -> DEF_N .)
+    DEM             reduce using rule 40 (object -> DEF_N .)
+    REL             reduce using rule 40 (object -> DEF_N .)
+    PRON_PLURAL     reduce using rule 40 (object -> DEF_N .)
+    PREP            reduce using rule 40 (object -> DEF_N .)
+    DEF_N           reduce using rule 40 (object -> DEF_N .)
+    SUB             reduce using rule 40 (object -> DEF_N .)
+    NEG             reduce using rule 40 (object -> DEF_N .)
+    EMPH            reduce using rule 40 (object -> DEF_N .)
+    INTG            reduce using rule 40 (object -> DEF_N .)
+    REM             reduce using rule 40 (object -> DEF_N .)
+
+
+state 35
+
+    (41) object -> UNDEF_N .
+    (46) subject -> UNDEF_N .
+
+  ! reduce/reduce conflict for DEF_N resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for UNDEF_N resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for PRON resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for PREP resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for SUB resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for NEG resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for REL resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for EMPH resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for INTG resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for VERB resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for CONJ resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for REM resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for DIVIDER resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for DEM resolved using rule 41 (object -> UNDEF_N .)
+  ! reduce/reduce conflict for PRON_PLURAL resolved using rule 41 (object -> UNDEF_N .)
+    DIVIDER         reduce using rule 41 (object -> UNDEF_N .)
+    UNDEF_N         reduce using rule 41 (object -> UNDEF_N .)
+    PRON            reduce using rule 41 (object -> UNDEF_N .)
+    CONJ            reduce using rule 41 (object -> UNDEF_N .)
+    VERB            reduce using rule 41 (object -> UNDEF_N .)
+    DEM             reduce using rule 41 (object -> UNDEF_N .)
+    REL             reduce using rule 41 (object -> UNDEF_N .)
+    PRON_PLURAL     reduce using rule 41 (object -> UNDEF_N .)
+    PREP            reduce using rule 41 (object -> UNDEF_N .)
+    DEF_N           reduce using rule 41 (object -> UNDEF_N .)
+    SUB             reduce using rule 41 (object -> UNDEF_N .)
+    NEG             reduce using rule 41 (object -> UNDEF_N .)
+    EMPH            reduce using rule 41 (object -> UNDEF_N .)
+    INTG            reduce using rule 41 (object -> UNDEF_N .)
+    REM             reduce using rule 41 (object -> UNDEF_N .)
+
+  ! DEF_N           [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! UNDEF_N         [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! PRON            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! PREP            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! SUB             [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! NEG             [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! REL             [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! EMPH            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! INTG            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! VERB            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! CONJ            [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! REM             [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! DIVIDER         [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! DEM             [ reduce using rule 46 (subject -> UNDEF_N .) ]
+  ! PRON_PLURAL     [ reduce using rule 46 (subject -> UNDEF_N .) ]
+
+
+state 36
+
+    (42) object -> sc .
+
+    DIVIDER         reduce using rule 42 (object -> sc .)
+    UNDEF_N         reduce using rule 42 (object -> sc .)
+    PRON            reduce using rule 42 (object -> sc .)
+    CONJ            reduce using rule 42 (object -> sc .)
+    VERB            reduce using rule 42 (object -> sc .)
+    DEM             reduce using rule 42 (object -> sc .)
+    REL             reduce using rule 42 (object -> sc .)
+    PRON_PLURAL     reduce using rule 42 (object -> sc .)
+    PREP            reduce using rule 42 (object -> sc .)
+    DEF_N           reduce using rule 42 (object -> sc .)
+    SUB             reduce using rule 42 (object -> sc .)
+    NEG             reduce using rule 42 (object -> sc .)
+    EMPH            reduce using rule 42 (object -> sc .)
+    INTG            reduce using rule 42 (object -> sc .)
+    REM             reduce using rule 42 (object -> sc .)
+
+
+state 37
+
+    (44) object -> PRON .
+    (45) subject -> PRON .
+
+  ! reduce/reduce conflict for DEF_N resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for UNDEF_N resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for PRON resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for PREP resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for SUB resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for NEG resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for REL resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for EMPH resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for INTG resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for VERB resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for CONJ resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for REM resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for DIVIDER resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for DEM resolved using rule 44 (object -> PRON .)
+  ! reduce/reduce conflict for PRON_PLURAL resolved using rule 44 (object -> PRON .)
+    DIVIDER         reduce using rule 44 (object -> PRON .)
+    UNDEF_N         reduce using rule 44 (object -> PRON .)
+    PRON            reduce using rule 44 (object -> PRON .)
+    CONJ            reduce using rule 44 (object -> PRON .)
+    VERB            reduce using rule 44 (object -> PRON .)
+    DEM             reduce using rule 44 (object -> PRON .)
+    REL             reduce using rule 44 (object -> PRON .)
+    PRON_PLURAL     reduce using rule 44 (object -> PRON .)
+    PREP            reduce using rule 44 (object -> PRON .)
+    DEF_N           reduce using rule 44 (object -> PRON .)
+    SUB             reduce using rule 44 (object -> PRON .)
+    NEG             reduce using rule 44 (object -> PRON .)
+    EMPH            reduce using rule 44 (object -> PRON .)
+    INTG            reduce using rule 44 (object -> PRON .)
+    REM             reduce using rule 44 (object -> PRON .)
+
+  ! DEF_N           [ reduce using rule 45 (subject -> PRON .) ]
+  ! UNDEF_N         [ reduce using rule 45 (subject -> PRON .) ]
+  ! PRON            [ reduce using rule 45 (subject -> PRON .) ]
+  ! PREP            [ reduce using rule 45 (subject -> PRON .) ]
+  ! SUB             [ reduce using rule 45 (subject -> PRON .) ]
+  ! NEG             [ reduce using rule 45 (subject -> PRON .) ]
+  ! REL             [ reduce using rule 45 (subject -> PRON .) ]
+  ! EMPH            [ reduce using rule 45 (subject -> PRON .) ]
+  ! INTG            [ reduce using rule 45 (subject -> PRON .) ]
+  ! VERB            [ reduce using rule 45 (subject -> PRON .) ]
+  ! CONJ            [ reduce using rule 45 (subject -> PRON .) ]
+  ! REM             [ reduce using rule 45 (subject -> PRON .) ]
+  ! DIVIDER         [ reduce using rule 45 (subject -> PRON .) ]
+  ! DEM             [ reduce using rule 45 (subject -> PRON .) ]
+  ! PRON_PLURAL     [ reduce using rule 45 (subject -> PRON .) ]
+
+
+state 38
+
+    (22) vs -> REL . VERB
+
+    VERB            shift and go to state 74
+
+
+state 39
+
+    (39) sc -> SUB . vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 75
+
+state 40
+
+    (21) vs -> NEG VERB . pp object
+    (25) vs -> NEG VERB . pp subject
+    (27) vs -> NEG VERB . object subject
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    PREP            shift and go to state 18
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    pp                             shift and go to state 76
+    object                         shift and go to state 77
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 41
+
+    (22) vs -> REL VERB .
+    (26) vs -> VERB . subject object adj
+    (32) vs -> VERB . subject pp
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    DIVIDER         reduce using rule 22 (vs -> REL VERB .)
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 30
+
+state 42
+
+    (18) ns -> REL vs . ns
+    (11) ns -> . PRON UNDEF_N
+    (12) ns -> . UNDEF_N UNDEF_N
+    (13) ns -> . CONJ UNDEF_N pp UNDEF_N UNDEF_N
+    (14) ns -> . UNDEF_N UNDEF_N UNDEF_N
+    (15) ns -> . CONJ UNDEF_N UNDEF_N UNDEF_N
+    (16) ns -> . VERB pp VERB subject CONJ vs CONJ vs
+    (17) ns -> . DEM UNDEF_N DEF_N
+    (18) ns -> . REL vs ns
+    (19) ns -> . PRON_PLURAL UNDEF_N DEF_N
+    (20) ns -> . pp UNDEF_N adj
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    PRON            shift and go to state 15
+    UNDEF_N         shift and go to state 8
+    CONJ            shift and go to state 21
+    VERB            shift and go to state 80
+    DEM             shift and go to state 16
+    REL             shift and go to state 78
+    PRON_PLURAL     shift and go to state 17
+    PREP            shift and go to state 18
+
+    ns                             shift and go to state 79
+    pp                             shift and go to state 7
+
+state 43
+
+    (23) vs -> EMPH CERT . VERB subject object pp
+
+    VERB            shift and go to state 81
+
+
+state 44
+
+    (24) vs -> INTG VERB . object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 82
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 45
+
+    (28) vs -> INTG NEG . VERB pp object
+
+    VERB            shift and go to state 83
+
+
+state 46
+
+    (30) vs -> REM NEG . VERB object
+
+    VERB            shift and go to state 84
+
+
+state 47
+
+    (11) ns -> PRON UNDEF_N .
+
+    DIVIDER         reduce using rule 11 (ns -> PRON UNDEF_N .)
+    PREP            reduce using rule 11 (ns -> PRON UNDEF_N .)
+
+
+state 48
+
+    (17) ns -> DEM UNDEF_N . DEF_N
+
+    DEF_N           shift and go to state 85
+
+
+state 49
+
+    (19) ns -> PRON_PLURAL UNDEF_N . DEF_N
+
+    DEF_N           shift and go to state 86
+
+
+state 50
+
+    (33) pp -> PREP DEM .
+
+    UNDEF_N         reduce using rule 33 (pp -> PREP DEM .)
+    VERB            reduce using rule 33 (pp -> PREP DEM .)
+    DEF_N           reduce using rule 33 (pp -> PREP DEM .)
+    PRON            reduce using rule 33 (pp -> PREP DEM .)
+    SUB             reduce using rule 33 (pp -> PREP DEM .)
+    NEG             reduce using rule 33 (pp -> PREP DEM .)
+    REL             reduce using rule 33 (pp -> PREP DEM .)
+    EMPH            reduce using rule 33 (pp -> PREP DEM .)
+    INTG            reduce using rule 33 (pp -> PREP DEM .)
+    CONJ            reduce using rule 33 (pp -> PREP DEM .)
+    REM             reduce using rule 33 (pp -> PREP DEM .)
+    DIVIDER         reduce using rule 33 (pp -> PREP DEM .)
+    DEM             reduce using rule 33 (pp -> PREP DEM .)
+    PRON_PLURAL     reduce using rule 33 (pp -> PREP DEM .)
+    PREP            reduce using rule 33 (pp -> PREP DEM .)
+
+
+state 51
+
+    (34) pp -> PREP UNDEF_N .
+    (38) pp -> PREP UNDEF_N . PRON
+
+  ! shift/reduce conflict for PRON resolved as shift
+    UNDEF_N         reduce using rule 34 (pp -> PREP UNDEF_N .)
+    VERB            reduce using rule 34 (pp -> PREP UNDEF_N .)
+    DEF_N           reduce using rule 34 (pp -> PREP UNDEF_N .)
+    SUB             reduce using rule 34 (pp -> PREP UNDEF_N .)
+    NEG             reduce using rule 34 (pp -> PREP UNDEF_N .)
+    REL             reduce using rule 34 (pp -> PREP UNDEF_N .)
+    EMPH            reduce using rule 34 (pp -> PREP UNDEF_N .)
+    INTG            reduce using rule 34 (pp -> PREP UNDEF_N .)
+    CONJ            reduce using rule 34 (pp -> PREP UNDEF_N .)
+    REM             reduce using rule 34 (pp -> PREP UNDEF_N .)
+    DIVIDER         reduce using rule 34 (pp -> PREP UNDEF_N .)
+    DEM             reduce using rule 34 (pp -> PREP UNDEF_N .)
+    PRON_PLURAL     reduce using rule 34 (pp -> PREP UNDEF_N .)
+    PREP            reduce using rule 34 (pp -> PREP UNDEF_N .)
+    PRON            shift and go to state 87
+
+  ! PRON            [ reduce using rule 34 (pp -> PREP UNDEF_N .) ]
+
+
+state 52
+
+    (35) pp -> PREP PRON .
+
+    UNDEF_N         reduce using rule 35 (pp -> PREP PRON .)
+    VERB            reduce using rule 35 (pp -> PREP PRON .)
+    DEF_N           reduce using rule 35 (pp -> PREP PRON .)
+    PRON            reduce using rule 35 (pp -> PREP PRON .)
+    SUB             reduce using rule 35 (pp -> PREP PRON .)
+    NEG             reduce using rule 35 (pp -> PREP PRON .)
+    REL             reduce using rule 35 (pp -> PREP PRON .)
+    EMPH            reduce using rule 35 (pp -> PREP PRON .)
+    INTG            reduce using rule 35 (pp -> PREP PRON .)
+    CONJ            reduce using rule 35 (pp -> PREP PRON .)
+    REM             reduce using rule 35 (pp -> PREP PRON .)
+    DIVIDER         reduce using rule 35 (pp -> PREP PRON .)
+    DEM             reduce using rule 35 (pp -> PREP PRON .)
+    PRON_PLURAL     reduce using rule 35 (pp -> PREP PRON .)
+    PREP            reduce using rule 35 (pp -> PREP PRON .)
+
+
+state 53
+
+    (36) pp -> PREP DEF_N .
+
+    UNDEF_N         reduce using rule 36 (pp -> PREP DEF_N .)
+    VERB            reduce using rule 36 (pp -> PREP DEF_N .)
+    DEF_N           reduce using rule 36 (pp -> PREP DEF_N .)
+    PRON            reduce using rule 36 (pp -> PREP DEF_N .)
+    SUB             reduce using rule 36 (pp -> PREP DEF_N .)
+    NEG             reduce using rule 36 (pp -> PREP DEF_N .)
+    REL             reduce using rule 36 (pp -> PREP DEF_N .)
+    EMPH            reduce using rule 36 (pp -> PREP DEF_N .)
+    INTG            reduce using rule 36 (pp -> PREP DEF_N .)
+    CONJ            reduce using rule 36 (pp -> PREP DEF_N .)
+    REM             reduce using rule 36 (pp -> PREP DEF_N .)
+    DIVIDER         reduce using rule 36 (pp -> PREP DEF_N .)
+    DEM             reduce using rule 36 (pp -> PREP DEF_N .)
+    PRON_PLURAL     reduce using rule 36 (pp -> PREP DEF_N .)
+    PREP            reduce using rule 36 (pp -> PREP DEF_N .)
+
+
+state 54
+
+    (37) pp -> PREP REL .
+
+    UNDEF_N         reduce using rule 37 (pp -> PREP REL .)
+    VERB            reduce using rule 37 (pp -> PREP REL .)
+    DEF_N           reduce using rule 37 (pp -> PREP REL .)
+    PRON            reduce using rule 37 (pp -> PREP REL .)
+    SUB             reduce using rule 37 (pp -> PREP REL .)
+    NEG             reduce using rule 37 (pp -> PREP REL .)
+    REL             reduce using rule 37 (pp -> PREP REL .)
+    EMPH            reduce using rule 37 (pp -> PREP REL .)
+    INTG            reduce using rule 37 (pp -> PREP REL .)
+    CONJ            reduce using rule 37 (pp -> PREP REL .)
+    REM             reduce using rule 37 (pp -> PREP REL .)
+    DIVIDER         reduce using rule 37 (pp -> PREP REL .)
+    DEM             reduce using rule 37 (pp -> PREP REL .)
+    PRON_PLURAL     reduce using rule 37 (pp -> PREP REL .)
+    PREP            reduce using rule 37 (pp -> PREP REL .)
+
+
+state 55
+
+    (13) ns -> CONJ UNDEF_N . pp UNDEF_N UNDEF_N
+    (15) ns -> CONJ UNDEF_N . UNDEF_N UNDEF_N
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    UNDEF_N         shift and go to state 88
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 59
+
+state 56
+
+    (6) verse -> CONJ ns pp . object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 89
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 57
+
+    (7) verse -> CONJ UNDEF_N CONJ . vs
+    (9) verse -> CONJ UNDEF_N CONJ . UNDEF_N
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    UNDEF_N         shift and go to state 90
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 91
+
+state 58
+
+    (15) ns -> CONJ UNDEF_N UNDEF_N . UNDEF_N
+    (12) ns -> UNDEF_N UNDEF_N .
+    (14) ns -> UNDEF_N UNDEF_N . UNDEF_N
+
+    UNDEF_N         shift and go to state 92
+    PREP            reduce using rule 12 (ns -> UNDEF_N UNDEF_N .)
+    DIVIDER         reduce using rule 12 (ns -> UNDEF_N UNDEF_N .)
+
+
+state 59
+
+    (13) ns -> CONJ UNDEF_N pp . UNDEF_N UNDEF_N
+
+    UNDEF_N         shift and go to state 93
+
+
+state 60
+
+    (29) vs -> CONJ VERB subject . object object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 94
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 61
+
+    (45) subject -> PRON .
+
+    DEF_N           reduce using rule 45 (subject -> PRON .)
+    UNDEF_N         reduce using rule 45 (subject -> PRON .)
+    PRON            reduce using rule 45 (subject -> PRON .)
+    SUB             reduce using rule 45 (subject -> PRON .)
+    NEG             reduce using rule 45 (subject -> PRON .)
+    REL             reduce using rule 45 (subject -> PRON .)
+    EMPH            reduce using rule 45 (subject -> PRON .)
+    INTG            reduce using rule 45 (subject -> PRON .)
+    VERB            reduce using rule 45 (subject -> PRON .)
+    CONJ            reduce using rule 45 (subject -> PRON .)
+    REM             reduce using rule 45 (subject -> PRON .)
+    PREP            reduce using rule 45 (subject -> PRON .)
+    DIVIDER         reduce using rule 45 (subject -> PRON .)
+    DEM             reduce using rule 45 (subject -> PRON .)
+    PRON_PLURAL     reduce using rule 45 (subject -> PRON .)
+
+
+state 62
+
+    (46) subject -> UNDEF_N .
+
+    DEF_N           reduce using rule 46 (subject -> UNDEF_N .)
+    UNDEF_N         reduce using rule 46 (subject -> UNDEF_N .)
+    PRON            reduce using rule 46 (subject -> UNDEF_N .)
+    SUB             reduce using rule 46 (subject -> UNDEF_N .)
+    NEG             reduce using rule 46 (subject -> UNDEF_N .)
+    REL             reduce using rule 46 (subject -> UNDEF_N .)
+    EMPH            reduce using rule 46 (subject -> UNDEF_N .)
+    INTG            reduce using rule 46 (subject -> UNDEF_N .)
+    VERB            reduce using rule 46 (subject -> UNDEF_N .)
+    CONJ            reduce using rule 46 (subject -> UNDEF_N .)
+    REM             reduce using rule 46 (subject -> UNDEF_N .)
+    PREP            reduce using rule 46 (subject -> UNDEF_N .)
+    DIVIDER         reduce using rule 46 (subject -> UNDEF_N .)
+    DEM             reduce using rule 46 (subject -> UNDEF_N .)
+    PRON_PLURAL     reduce using rule 46 (subject -> UNDEF_N .)
+
+
+state 63
+
+    (31) vs -> CONJ REL VERB . PRON REL DEF_N
+    (26) vs -> VERB . subject object adj
+    (32) vs -> VERB . subject pp
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 95
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 30
+
+state 64
+
+    (47) adj -> UNDEF_N .
+
+    DIVIDER         reduce using rule 47 (adj -> UNDEF_N .)
+    PREP            reduce using rule 47 (adj -> UNDEF_N .)
+    PRON            reduce using rule 47 (adj -> UNDEF_N .)
+    UNDEF_N         reduce using rule 47 (adj -> UNDEF_N .)
+    CONJ            reduce using rule 47 (adj -> UNDEF_N .)
+    VERB            reduce using rule 47 (adj -> UNDEF_N .)
+    DEM             reduce using rule 47 (adj -> UNDEF_N .)
+    REL             reduce using rule 47 (adj -> UNDEF_N .)
+    PRON_PLURAL     reduce using rule 47 (adj -> UNDEF_N .)
+    DEF_N           reduce using rule 47 (adj -> UNDEF_N .)
+    SUB             reduce using rule 47 (adj -> UNDEF_N .)
+    NEG             reduce using rule 47 (adj -> UNDEF_N .)
+    EMPH            reduce using rule 47 (adj -> UNDEF_N .)
+    INTG            reduce using rule 47 (adj -> UNDEF_N .)
+    REM             reduce using rule 47 (adj -> UNDEF_N .)
+
+
+state 65
+
+    (20) ns -> pp UNDEF_N adj .
+
+    DIVIDER         reduce using rule 20 (ns -> pp UNDEF_N adj .)
+    PREP            reduce using rule 20 (ns -> pp UNDEF_N adj .)
+
+
+state 66
+
+    (14) ns -> UNDEF_N UNDEF_N UNDEF_N .
+
+    DIVIDER         reduce using rule 14 (ns -> UNDEF_N UNDEF_N UNDEF_N .)
+    PREP            reduce using rule 14 (ns -> UNDEF_N UNDEF_N UNDEF_N .)
+
+
+state 67
+
+    (26) vs -> VERB subject object . adj
+    (47) adj -> . UNDEF_N
+
+    UNDEF_N         shift and go to state 64
+
+    adj                            shift and go to state 96
+
+state 68
+
+    (32) vs -> VERB subject pp .
+
+    DIVIDER         reduce using rule 32 (vs -> VERB subject pp .)
+    PRON            reduce using rule 32 (vs -> VERB subject pp .)
+    UNDEF_N         reduce using rule 32 (vs -> VERB subject pp .)
+    CONJ            reduce using rule 32 (vs -> VERB subject pp .)
+    VERB            reduce using rule 32 (vs -> VERB subject pp .)
+    DEM             reduce using rule 32 (vs -> VERB subject pp .)
+    REL             reduce using rule 32 (vs -> VERB subject pp .)
+    PRON_PLURAL     reduce using rule 32 (vs -> VERB subject pp .)
+    PREP            reduce using rule 32 (vs -> VERB subject pp .)
+    DEF_N           reduce using rule 32 (vs -> VERB subject pp .)
+    SUB             reduce using rule 32 (vs -> VERB subject pp .)
+    NEG             reduce using rule 32 (vs -> VERB subject pp .)
+    EMPH            reduce using rule 32 (vs -> VERB subject pp .)
+    INTG            reduce using rule 32 (vs -> VERB subject pp .)
+    REM             reduce using rule 32 (vs -> VERB subject pp .)
+
+
+state 69
+
+    (41) object -> UNDEF_N .
+
+    UNDEF_N         reduce using rule 41 (object -> UNDEF_N .)
+    PRON            reduce using rule 41 (object -> UNDEF_N .)
+    DIVIDER         reduce using rule 41 (object -> UNDEF_N .)
+    CONJ            reduce using rule 41 (object -> UNDEF_N .)
+    VERB            reduce using rule 41 (object -> UNDEF_N .)
+    DEM             reduce using rule 41 (object -> UNDEF_N .)
+    REL             reduce using rule 41 (object -> UNDEF_N .)
+    PRON_PLURAL     reduce using rule 41 (object -> UNDEF_N .)
+    PREP            reduce using rule 41 (object -> UNDEF_N .)
+    DEF_N           reduce using rule 41 (object -> UNDEF_N .)
+    SUB             reduce using rule 41 (object -> UNDEF_N .)
+    NEG             reduce using rule 41 (object -> UNDEF_N .)
+    EMPH            reduce using rule 41 (object -> UNDEF_N .)
+    INTG            reduce using rule 41 (object -> UNDEF_N .)
+    REM             reduce using rule 41 (object -> UNDEF_N .)
+
+
+state 70
+
+    (44) object -> PRON .
+
+    UNDEF_N         reduce using rule 44 (object -> PRON .)
+    PRON            reduce using rule 44 (object -> PRON .)
+    DIVIDER         reduce using rule 44 (object -> PRON .)
+    CONJ            reduce using rule 44 (object -> PRON .)
+    VERB            reduce using rule 44 (object -> PRON .)
+    DEM             reduce using rule 44 (object -> PRON .)
+    REL             reduce using rule 44 (object -> PRON .)
+    PRON_PLURAL     reduce using rule 44 (object -> PRON .)
+    PREP            reduce using rule 44 (object -> PRON .)
+    DEF_N           reduce using rule 44 (object -> PRON .)
+    SUB             reduce using rule 44 (object -> PRON .)
+    NEG             reduce using rule 44 (object -> PRON .)
+    EMPH            reduce using rule 44 (object -> PRON .)
+    INTG            reduce using rule 44 (object -> PRON .)
+    REM             reduce using rule 44 (object -> PRON .)
+
+
+state 71
+
+    (16) ns -> VERB pp VERB . subject CONJ vs CONJ vs
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 97
+
+state 72
+
+    (29) vs -> CONJ VERB . subject object object
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 60
+
+state 73
+
+    (31) vs -> CONJ REL . VERB PRON REL DEF_N
+
+    VERB            shift and go to state 98
+
+
+state 74
+
+    (22) vs -> REL VERB .
+
+    DIVIDER         reduce using rule 22 (vs -> REL VERB .)
+    PRON            reduce using rule 22 (vs -> REL VERB .)
+    UNDEF_N         reduce using rule 22 (vs -> REL VERB .)
+    CONJ            reduce using rule 22 (vs -> REL VERB .)
+    VERB            reduce using rule 22 (vs -> REL VERB .)
+    DEM             reduce using rule 22 (vs -> REL VERB .)
+    REL             reduce using rule 22 (vs -> REL VERB .)
+    PRON_PLURAL     reduce using rule 22 (vs -> REL VERB .)
+    PREP            reduce using rule 22 (vs -> REL VERB .)
+    DEF_N           reduce using rule 22 (vs -> REL VERB .)
+    SUB             reduce using rule 22 (vs -> REL VERB .)
+    NEG             reduce using rule 22 (vs -> REL VERB .)
+    EMPH            reduce using rule 22 (vs -> REL VERB .)
+    INTG            reduce using rule 22 (vs -> REL VERB .)
+    REM             reduce using rule 22 (vs -> REL VERB .)
+
+
+state 75
+
+    (39) sc -> SUB vs .
+
+    DIVIDER         reduce using rule 39 (sc -> SUB vs .)
+    UNDEF_N         reduce using rule 39 (sc -> SUB vs .)
+    PRON            reduce using rule 39 (sc -> SUB vs .)
+    CONJ            reduce using rule 39 (sc -> SUB vs .)
+    VERB            reduce using rule 39 (sc -> SUB vs .)
+    DEM             reduce using rule 39 (sc -> SUB vs .)
+    REL             reduce using rule 39 (sc -> SUB vs .)
+    PRON_PLURAL     reduce using rule 39 (sc -> SUB vs .)
+    PREP            reduce using rule 39 (sc -> SUB vs .)
+    DEF_N           reduce using rule 39 (sc -> SUB vs .)
+    SUB             reduce using rule 39 (sc -> SUB vs .)
+    NEG             reduce using rule 39 (sc -> SUB vs .)
+    EMPH            reduce using rule 39 (sc -> SUB vs .)
+    INTG            reduce using rule 39 (sc -> SUB vs .)
+    REM             reduce using rule 39 (sc -> SUB vs .)
+
+
+state 76
+
+    (21) vs -> NEG VERB pp . object
+    (25) vs -> NEG VERB pp . subject
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 35
+    PRON            shift and go to state 37
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 99
+    subject                        shift and go to state 100
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 77
+
+    (27) vs -> NEG VERB object . subject
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 101
+
+state 78
+
+    (18) ns -> REL . vs ns
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 42
+
+state 79
+
+    (18) ns -> REL vs ns .
+
+    DIVIDER         reduce using rule 18 (ns -> REL vs ns .)
+    PREP            reduce using rule 18 (ns -> REL vs ns .)
+
+
+state 80
+
+    (16) ns -> VERB . pp VERB subject CONJ vs CONJ vs
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 31
+
+state 81
+
+    (23) vs -> EMPH CERT VERB . subject object pp
+    (45) subject -> . PRON
+    (46) subject -> . UNDEF_N
+
+    PRON            shift and go to state 61
+    UNDEF_N         shift and go to state 62
+
+    subject                        shift and go to state 102
+
+state 82
+
+    (24) vs -> INTG VERB object .
+
+    DIVIDER         reduce using rule 24 (vs -> INTG VERB object .)
+    PRON            reduce using rule 24 (vs -> INTG VERB object .)
+    UNDEF_N         reduce using rule 24 (vs -> INTG VERB object .)
+    CONJ            reduce using rule 24 (vs -> INTG VERB object .)
+    VERB            reduce using rule 24 (vs -> INTG VERB object .)
+    DEM             reduce using rule 24 (vs -> INTG VERB object .)
+    REL             reduce using rule 24 (vs -> INTG VERB object .)
+    PRON_PLURAL     reduce using rule 24 (vs -> INTG VERB object .)
+    PREP            reduce using rule 24 (vs -> INTG VERB object .)
+    DEF_N           reduce using rule 24 (vs -> INTG VERB object .)
+    SUB             reduce using rule 24 (vs -> INTG VERB object .)
+    NEG             reduce using rule 24 (vs -> INTG VERB object .)
+    EMPH            reduce using rule 24 (vs -> INTG VERB object .)
+    INTG            reduce using rule 24 (vs -> INTG VERB object .)
+    REM             reduce using rule 24 (vs -> INTG VERB object .)
+
+
+state 83
+
+    (28) vs -> INTG NEG VERB . pp object
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 103
+
+state 84
+
+    (30) vs -> REM NEG VERB . object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 104
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 85
+
+    (17) ns -> DEM UNDEF_N DEF_N .
+
+    DIVIDER         reduce using rule 17 (ns -> DEM UNDEF_N DEF_N .)
+    PREP            reduce using rule 17 (ns -> DEM UNDEF_N DEF_N .)
+
+
+state 86
+
+    (19) ns -> PRON_PLURAL UNDEF_N DEF_N .
+
+    DIVIDER         reduce using rule 19 (ns -> PRON_PLURAL UNDEF_N DEF_N .)
+    PREP            reduce using rule 19 (ns -> PRON_PLURAL UNDEF_N DEF_N .)
+
+
+state 87
+
+    (38) pp -> PREP UNDEF_N PRON .
+
+    UNDEF_N         reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    VERB            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    DEF_N           reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    PRON            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    SUB             reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    NEG             reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    REL             reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    EMPH            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    INTG            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    CONJ            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    REM             reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    DIVIDER         reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    DEM             reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    PRON_PLURAL     reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+    PREP            reduce using rule 38 (pp -> PREP UNDEF_N PRON .)
+
+
+state 88
+
+    (15) ns -> CONJ UNDEF_N UNDEF_N . UNDEF_N
+
+    UNDEF_N         shift and go to state 105
+
+
+state 89
+
+    (6) verse -> CONJ ns pp object .
+
+    DIVIDER         reduce using rule 6 (verse -> CONJ ns pp object .)
+
+
+state 90
+
+    (9) verse -> CONJ UNDEF_N CONJ UNDEF_N .
+
+    DIVIDER         reduce using rule 9 (verse -> CONJ UNDEF_N CONJ UNDEF_N .)
+
+
+state 91
+
+    (7) verse -> CONJ UNDEF_N CONJ vs .
+
+    DIVIDER         reduce using rule 7 (verse -> CONJ UNDEF_N CONJ vs .)
+
+
+state 92
+
+    (15) ns -> CONJ UNDEF_N UNDEF_N UNDEF_N .
+    (14) ns -> UNDEF_N UNDEF_N UNDEF_N .
+
+  ! reduce/reduce conflict for DIVIDER resolved using rule 14 (ns -> UNDEF_N UNDEF_N UNDEF_N .)
+    PREP            reduce using rule 14 (ns -> UNDEF_N UNDEF_N UNDEF_N .)
+    DIVIDER         reduce using rule 14 (ns -> UNDEF_N UNDEF_N UNDEF_N .)
+
+  ! DIVIDER         [ reduce using rule 15 (ns -> CONJ UNDEF_N UNDEF_N UNDEF_N .) ]
+
+
+state 93
+
+    (13) ns -> CONJ UNDEF_N pp UNDEF_N . UNDEF_N
+
+    UNDEF_N         shift and go to state 106
+
+
+state 94
+
+    (29) vs -> CONJ VERB subject object . object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 107
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 95
+
+    (31) vs -> CONJ REL VERB PRON . REL DEF_N
+    (45) subject -> PRON .
+
+  ! shift/reduce conflict for REL resolved as shift
+    REL             shift and go to state 108
+    DEF_N           reduce using rule 45 (subject -> PRON .)
+    UNDEF_N         reduce using rule 45 (subject -> PRON .)
+    PRON            reduce using rule 45 (subject -> PRON .)
+    PREP            reduce using rule 45 (subject -> PRON .)
+    SUB             reduce using rule 45 (subject -> PRON .)
+    NEG             reduce using rule 45 (subject -> PRON .)
+    EMPH            reduce using rule 45 (subject -> PRON .)
+    INTG            reduce using rule 45 (subject -> PRON .)
+    VERB            reduce using rule 45 (subject -> PRON .)
+    CONJ            reduce using rule 45 (subject -> PRON .)
+    REM             reduce using rule 45 (subject -> PRON .)
+
+  ! REL             [ reduce using rule 45 (subject -> PRON .) ]
+
+
+state 96
+
+    (26) vs -> VERB subject object adj .
+
+    DIVIDER         reduce using rule 26 (vs -> VERB subject object adj .)
+    PRON            reduce using rule 26 (vs -> VERB subject object adj .)
+    UNDEF_N         reduce using rule 26 (vs -> VERB subject object adj .)
+    CONJ            reduce using rule 26 (vs -> VERB subject object adj .)
+    VERB            reduce using rule 26 (vs -> VERB subject object adj .)
+    DEM             reduce using rule 26 (vs -> VERB subject object adj .)
+    REL             reduce using rule 26 (vs -> VERB subject object adj .)
+    PRON_PLURAL     reduce using rule 26 (vs -> VERB subject object adj .)
+    PREP            reduce using rule 26 (vs -> VERB subject object adj .)
+    DEF_N           reduce using rule 26 (vs -> VERB subject object adj .)
+    SUB             reduce using rule 26 (vs -> VERB subject object adj .)
+    NEG             reduce using rule 26 (vs -> VERB subject object adj .)
+    EMPH            reduce using rule 26 (vs -> VERB subject object adj .)
+    INTG            reduce using rule 26 (vs -> VERB subject object adj .)
+    REM             reduce using rule 26 (vs -> VERB subject object adj .)
+
+
+state 97
+
+    (16) ns -> VERB pp VERB subject . CONJ vs CONJ vs
+
+    CONJ            shift and go to state 109
+
+
+state 98
+
+    (31) vs -> CONJ REL VERB . PRON REL DEF_N
+
+    PRON            shift and go to state 110
+
+
+state 99
+
+    (21) vs -> NEG VERB pp object .
+
+    DIVIDER         reduce using rule 21 (vs -> NEG VERB pp object .)
+    PRON            reduce using rule 21 (vs -> NEG VERB pp object .)
+    UNDEF_N         reduce using rule 21 (vs -> NEG VERB pp object .)
+    CONJ            reduce using rule 21 (vs -> NEG VERB pp object .)
+    VERB            reduce using rule 21 (vs -> NEG VERB pp object .)
+    DEM             reduce using rule 21 (vs -> NEG VERB pp object .)
+    REL             reduce using rule 21 (vs -> NEG VERB pp object .)
+    PRON_PLURAL     reduce using rule 21 (vs -> NEG VERB pp object .)
+    PREP            reduce using rule 21 (vs -> NEG VERB pp object .)
+    DEF_N           reduce using rule 21 (vs -> NEG VERB pp object .)
+    SUB             reduce using rule 21 (vs -> NEG VERB pp object .)
+    NEG             reduce using rule 21 (vs -> NEG VERB pp object .)
+    EMPH            reduce using rule 21 (vs -> NEG VERB pp object .)
+    INTG            reduce using rule 21 (vs -> NEG VERB pp object .)
+    REM             reduce using rule 21 (vs -> NEG VERB pp object .)
+
+
+state 100
+
+    (25) vs -> NEG VERB pp subject .
+
+    DIVIDER         reduce using rule 25 (vs -> NEG VERB pp subject .)
+    PRON            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    UNDEF_N         reduce using rule 25 (vs -> NEG VERB pp subject .)
+    CONJ            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    VERB            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    DEM             reduce using rule 25 (vs -> NEG VERB pp subject .)
+    REL             reduce using rule 25 (vs -> NEG VERB pp subject .)
+    PRON_PLURAL     reduce using rule 25 (vs -> NEG VERB pp subject .)
+    PREP            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    DEF_N           reduce using rule 25 (vs -> NEG VERB pp subject .)
+    SUB             reduce using rule 25 (vs -> NEG VERB pp subject .)
+    NEG             reduce using rule 25 (vs -> NEG VERB pp subject .)
+    EMPH            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    INTG            reduce using rule 25 (vs -> NEG VERB pp subject .)
+    REM             reduce using rule 25 (vs -> NEG VERB pp subject .)
+
+
+state 101
+
+    (27) vs -> NEG VERB object subject .
+
+    DIVIDER         reduce using rule 27 (vs -> NEG VERB object subject .)
+    PRON            reduce using rule 27 (vs -> NEG VERB object subject .)
+    UNDEF_N         reduce using rule 27 (vs -> NEG VERB object subject .)
+    CONJ            reduce using rule 27 (vs -> NEG VERB object subject .)
+    VERB            reduce using rule 27 (vs -> NEG VERB object subject .)
+    DEM             reduce using rule 27 (vs -> NEG VERB object subject .)
+    REL             reduce using rule 27 (vs -> NEG VERB object subject .)
+    PRON_PLURAL     reduce using rule 27 (vs -> NEG VERB object subject .)
+    PREP            reduce using rule 27 (vs -> NEG VERB object subject .)
+    DEF_N           reduce using rule 27 (vs -> NEG VERB object subject .)
+    SUB             reduce using rule 27 (vs -> NEG VERB object subject .)
+    NEG             reduce using rule 27 (vs -> NEG VERB object subject .)
+    EMPH            reduce using rule 27 (vs -> NEG VERB object subject .)
+    INTG            reduce using rule 27 (vs -> NEG VERB object subject .)
+    REM             reduce using rule 27 (vs -> NEG VERB object subject .)
+
+
+state 102
+
+    (23) vs -> EMPH CERT VERB subject . object pp
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 111
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 103
+
+    (28) vs -> INTG NEG VERB pp . object
+    (40) object -> . DEF_N
+    (41) object -> . UNDEF_N
+    (42) object -> . sc
+    (43) object -> . vs
+    (44) object -> . PRON
+    (39) sc -> . SUB vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    DEF_N           shift and go to state 34
+    UNDEF_N         shift and go to state 69
+    PRON            shift and go to state 70
+    SUB             shift and go to state 39
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    object                         shift and go to state 112
+    sc                             shift and go to state 36
+    vs                             shift and go to state 33
+
+state 104
+
+    (30) vs -> REM NEG VERB object .
+
+    DIVIDER         reduce using rule 30 (vs -> REM NEG VERB object .)
+    PRON            reduce using rule 30 (vs -> REM NEG VERB object .)
+    UNDEF_N         reduce using rule 30 (vs -> REM NEG VERB object .)
+    CONJ            reduce using rule 30 (vs -> REM NEG VERB object .)
+    VERB            reduce using rule 30 (vs -> REM NEG VERB object .)
+    DEM             reduce using rule 30 (vs -> REM NEG VERB object .)
+    REL             reduce using rule 30 (vs -> REM NEG VERB object .)
+    PRON_PLURAL     reduce using rule 30 (vs -> REM NEG VERB object .)
+    PREP            reduce using rule 30 (vs -> REM NEG VERB object .)
+    DEF_N           reduce using rule 30 (vs -> REM NEG VERB object .)
+    SUB             reduce using rule 30 (vs -> REM NEG VERB object .)
+    NEG             reduce using rule 30 (vs -> REM NEG VERB object .)
+    EMPH            reduce using rule 30 (vs -> REM NEG VERB object .)
+    INTG            reduce using rule 30 (vs -> REM NEG VERB object .)
+    REM             reduce using rule 30 (vs -> REM NEG VERB object .)
+
+
+state 105
+
+    (15) ns -> CONJ UNDEF_N UNDEF_N UNDEF_N .
+
+    PREP            reduce using rule 15 (ns -> CONJ UNDEF_N UNDEF_N UNDEF_N .)
+    DIVIDER         reduce using rule 15 (ns -> CONJ UNDEF_N UNDEF_N UNDEF_N .)
+
+
+state 106
+
+    (13) ns -> CONJ UNDEF_N pp UNDEF_N UNDEF_N .
+
+    DIVIDER         reduce using rule 13 (ns -> CONJ UNDEF_N pp UNDEF_N UNDEF_N .)
+    PREP            reduce using rule 13 (ns -> CONJ UNDEF_N pp UNDEF_N UNDEF_N .)
+
+
+state 107
+
+    (29) vs -> CONJ VERB subject object object .
+
+    DIVIDER         reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    PRON            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    UNDEF_N         reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    CONJ            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    VERB            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    DEM             reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    REL             reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    PRON_PLURAL     reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    PREP            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    DEF_N           reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    SUB             reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    NEG             reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    EMPH            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    INTG            reduce using rule 29 (vs -> CONJ VERB subject object object .)
+    REM             reduce using rule 29 (vs -> CONJ VERB subject object object .)
+
+
+state 108
+
+    (31) vs -> CONJ REL VERB PRON REL . DEF_N
+
+    DEF_N           shift and go to state 113
+
+
+state 109
+
+    (16) ns -> VERB pp VERB subject CONJ . vs CONJ vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 114
+
+state 110
+
+    (31) vs -> CONJ REL VERB PRON . REL DEF_N
+
+    REL             shift and go to state 108
+
+
+state 111
+
+    (23) vs -> EMPH CERT VERB subject object . pp
+    (33) pp -> . PREP DEM
+    (34) pp -> . PREP UNDEF_N
+    (35) pp -> . PREP PRON
+    (36) pp -> . PREP DEF_N
+    (37) pp -> . PREP REL
+    (38) pp -> . PREP UNDEF_N PRON
+
+    PREP            shift and go to state 18
+
+    pp                             shift and go to state 115
+
+state 112
+
+    (28) vs -> INTG NEG VERB pp object .
+
+    DIVIDER         reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    PRON            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    UNDEF_N         reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    CONJ            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    VERB            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    DEM             reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    REL             reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    PRON_PLURAL     reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    PREP            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    DEF_N           reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    SUB             reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    NEG             reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    EMPH            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    INTG            reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+    REM             reduce using rule 28 (vs -> INTG NEG VERB pp object .)
+
+
+state 113
+
+    (31) vs -> CONJ REL VERB PRON REL DEF_N .
+
+    DIVIDER         reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    PRON            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    UNDEF_N         reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    CONJ            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    VERB            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    DEM             reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    REL             reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    PRON_PLURAL     reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    PREP            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    DEF_N           reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    SUB             reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    NEG             reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    EMPH            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    INTG            reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+    REM             reduce using rule 31 (vs -> CONJ REL VERB PRON REL DEF_N .)
+
+
+state 114
+
+    (16) ns -> VERB pp VERB subject CONJ vs . CONJ vs
+
+    CONJ            shift and go to state 116
+
+
+state 115
+
+    (23) vs -> EMPH CERT VERB subject object pp .
+
+    DIVIDER         reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    PRON            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    UNDEF_N         reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    CONJ            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    VERB            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    DEM             reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    REL             reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    PRON_PLURAL     reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    PREP            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    DEF_N           reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    SUB             reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    NEG             reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    EMPH            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    INTG            reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+    REM             reduce using rule 23 (vs -> EMPH CERT VERB subject object pp .)
+
+
+state 116
+
+    (16) ns -> VERB pp VERB subject CONJ vs CONJ . vs
+    (21) vs -> . NEG VERB pp object
+    (22) vs -> . REL VERB
+    (23) vs -> . EMPH CERT VERB subject object pp
+    (24) vs -> . INTG VERB object
+    (25) vs -> . NEG VERB pp subject
+    (26) vs -> . VERB subject object adj
+    (27) vs -> . NEG VERB object subject
+    (28) vs -> . INTG NEG VERB pp object
+    (29) vs -> . CONJ VERB subject object object
+    (30) vs -> . REM NEG VERB object
+    (31) vs -> . CONJ REL VERB PRON REL DEF_N
+    (32) vs -> . VERB subject pp
+
+    NEG             shift and go to state 10
+    REL             shift and go to state 38
+    EMPH            shift and go to state 12
+    INTG            shift and go to state 13
+    VERB            shift and go to state 28
+    CONJ            shift and go to state 32
+    REM             shift and go to state 14
+
+    vs                             shift and go to state 117
+
+state 117
+
+    (16) ns -> VERB pp VERB subject CONJ vs CONJ vs .
+
+    DIVIDER         reduce using rule 16 (ns -> VERB pp VERB subject CONJ vs CONJ vs .)
+    PREP            reduce using rule 16 (ns -> VERB pp VERB subject CONJ vs CONJ vs .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for PRON in state 51 resolved as shift
+WARNING: shift/reduce conflict for REL in state 95 resolved as shift
+WARNING: reduce/reduce conflict in state 35 resolved using rule (object -> UNDEF_N)
+WARNING: rejected rule (subject -> UNDEF_N) in state 35
+WARNING: reduce/reduce conflict in state 37 resolved using rule (object -> PRON)
+WARNING: rejected rule (subject -> PRON) in state 37
+WARNING: reduce/reduce conflict in state 92 resolved using rule (ns -> UNDEF_N UNDEF_N UNDEF_N)
+WARNING: rejected rule (ns -> CONJ UNDEF_N UNDEF_N UNDEF_N) in state 92
